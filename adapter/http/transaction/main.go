@@ -4,11 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/Poportss/finance-go/model/transaction"
+	"github.com/Poportss/finance-go/util"
 	"io"
 	"net/http"
-	"time"
 )
 
+// GetTransactions find some transactions
 func GetTransactions(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
@@ -17,16 +18,12 @@ func GetTransactions(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	var layout = "2006-01-02T15:04:05"
-	salaryReceived, _ := time.Parse(layout, "2025-02-08T15:04:05")
-
-	"2025-02-08T15:04:05"
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
 			Title:     "Salário",
 			Value:     1200.1,
 			Type:      0,
-			CreatedAt: salaryReceived,
+			CreatedAt: util.StringToTime("2025-02-08T15:04:05"),
 		},
 	}
 
@@ -37,6 +34,7 @@ func GetTransactions(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// CreateATransactions create a new transaction
 func CreateATransactions(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)

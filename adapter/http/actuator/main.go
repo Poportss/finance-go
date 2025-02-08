@@ -9,6 +9,7 @@ type HealthBody struct {
 	Status string `json:"status"`
 }
 
+// Health verific is service alive
 func Health(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
