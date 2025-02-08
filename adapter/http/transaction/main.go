@@ -20,6 +20,7 @@ func GetTransactions(w http.ResponseWriter, r *http.Request) {
 	var layout = "2006-01-02T15:04:05"
 	salaryReceived, _ := time.Parse(layout, "2025-02-08T15:04:05")
 
+	"2025-02-08T15:04:05"
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
 			Title:     "Salário",
