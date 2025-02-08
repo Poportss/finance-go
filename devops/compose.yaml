@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+    image: poports/finance
+    container_name: "app_finance_go"
+    ports:
+      - "8080:8080"
