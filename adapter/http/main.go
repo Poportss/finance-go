@@ -3,6 +3,7 @@ package http
 import (
 	"github.com/Poportss/finance-go/adapter/http/actuator"
 	"github.com/Poportss/finance-go/adapter/http/transaction"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"net/http"
 )
 
